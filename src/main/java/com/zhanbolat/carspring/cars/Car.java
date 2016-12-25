@@ -1,7 +1,5 @@
 package com.zhanbolat.carspring.cars;
 
-import com.zhanbolat.carspring.cars.DriveType;
-import com.zhanbolat.carspring.cars.ICar;
 import com.zhanbolat.carspring.engines.IEngine;
 import com.zhanbolat.carspring.transmissions.ITransmission;
 
@@ -9,58 +7,84 @@ import com.zhanbolat.carspring.transmissions.ITransmission;
  * Created by zhanbolat on 17.12.2016.
  */
 public abstract class Car implements ICar {
-    protected final String MODEL;
-    protected final IEngine ENGINE;
-    protected final ITransmission TRANSMISSION;
-    protected final DriveType DRIVE_TYPE;
+    protected String model;
+    protected IEngine engine;
+    protected ITransmission transmission;
+    protected DriveType driveType;
     protected boolean isRide = false;
 
     protected Car() {
-        this.MODEL = "undefined car";
-        this.ENGINE = null;
-        this.TRANSMISSION = null;
-        this.DRIVE_TYPE = null;
+       this.model = "undefined car";
     }
+
     protected Car(
-            final String model,
-            final IEngine engine,
-            final ITransmission transmission,
-            final DriveType driveType){
-        this.MODEL = model;
-        this.ENGINE = engine;
-        this.TRANSMISSION = transmission;
-        this.DRIVE_TYPE = driveType;
+            String model,
+            IEngine engine,
+            ITransmission transmission,
+            DriveType driveType){
+        this.model = model;
+        this.engine = engine;
+        this.transmission = transmission;
+        this.driveType = driveType;
+    }
+
+    @Override
+    public void carInit(IEngine engine, ITransmission transmission) {
+        this.setModel("Golf mk3");
+        this.setEngine(engine);
+        this.setTranmission(transmission);
+        this.setDriveType(DriveType.FrontWheel);
+    }
+
+    @Override
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    @Override
+    public void setEngine(IEngine engine) {
+        this.engine = engine;
+    }
+
+    @Override
+    public void setTranmission(ITransmission tranmission) {
+        this.transmission = tranmission;
+    }
+
+    @Override
+    public void setDriveType(DriveType driveType) {
+        this.driveType = driveType;
     }
 
     @Override
     public String getModel() {
-        return this.MODEL;
+        return this.model;
     }
 
     @Override
     public IEngine getEngine() {
-        return this.ENGINE;
+        return this.engine;
     }
 
     @Override
     public ITransmission getTransmission() {
-        return this.TRANSMISSION;
+        return this.transmission;
     }
 
     @Override
     public DriveType getDriveType() {
-        return this.DRIVE_TYPE;
+        return this.driveType;
     }
 
     @Override
     public void startRide() {
-        if (this.ENGINE == null || this.TRANSMISSION == null) {
-            System.err.println("Warning! " + this.MODEL + ": No engine and/or transmission");
+        if (this.engine == null || this.transmission == null) {
+            System.err.println("Warning! " + this.model + ": No engine and/or transmission");
         } else if (!isRide) {
             this.isRide = true;
-            System.out.println(this.MODEL + ": starting ride...");
-            this.ENGINE.startEngine();
-            this.TRANSMISSION.gearUp();
+            System.out.println(this.model + ": starting ride...");
+            this.engine.startEngine();
+            this.transmission.gearUp();
         }
     }
 
@@ -68,9 +92,9 @@ public abstract class Car implements ICar {
     public void stopRide() {
         if (isRide) {
             this.isRide = false;
-            System.out.println(this.MODEL + ": stopping ride...");
-            this.TRANSMISSION.gearDown();
-            this.ENGINE.stopEngine();
+            System.out.println(this.model + ": stopping ride...");
+            this.transmission.gearDown();
+            this.engine.stopEngine();
         }
     }
 }

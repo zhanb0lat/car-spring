@@ -22,4 +22,12 @@ public class Golf3 extends Car {
                 DriveType.FrontWheel
         );
     }
+
+    public void preInit() {
+        System.out.println("Golf3 init... ");
+    }
+
+    public void preDestroy() {
+        System.out.println("Golf3 destroy... ");
+    }
 }
