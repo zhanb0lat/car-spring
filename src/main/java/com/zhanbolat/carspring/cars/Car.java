@@ -13,7 +13,14 @@ public abstract class Car implements ICar {
     protected final IEngine ENGINE;
     protected final ITransmission TRANSMISSION;
     protected final DriveType DRIVE_TYPE;
+    protected boolean isRide = false;
 
+    protected Car() {
+        this.MODEL = "undefined car";
+        this.ENGINE = null;
+        this.TRANSMISSION = null;
+        this.DRIVE_TYPE = null;
+    }
     protected Car(
             final String model,
             final IEngine engine,
@@ -47,13 +54,23 @@ public abstract class Car implements ICar {
 
     @Override
     public void startRide() {
-        this.ENGINE.startEngine();
-        this.TRANSMISSION.gearUp();
+        if (this.ENGINE == null || this.TRANSMISSION == null) {
+            System.err.println("Warning! " + this.MODEL + ": No engine and/or transmission");
+        } else if (!isRide) {
+            this.isRide = true;
+            System.out.println(this.MODEL + ": starting ride...");
+            this.ENGINE.startEngine();
+            this.TRANSMISSION.gearUp();
+        }
     }
 
     @Override
     public void stopRide() {
-        this.TRANSMISSION.gearDown();
-        this.ENGINE.stopEngine();
+        if (isRide) {
+            this.isRide = false;
+            System.out.println(this.MODEL + ": stopping ride...");
+            this.TRANSMISSION.gearDown();
+            this.ENGINE.stopEngine();
+        }
     }
 }

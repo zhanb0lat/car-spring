@@ -10,6 +10,10 @@ import com.zhanbolat.carspring.transmissions.ITransmission;
  */
 public class Golf3 extends Car {
 
+    public Golf3() {
+        super();
+    }
+
     public Golf3(IEngine engine, ITransmission transmission) {
         super(
                 "Golf mk3",

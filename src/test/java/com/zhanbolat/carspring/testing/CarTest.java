@@ -28,4 +28,10 @@ public class CarTest {
     public void checkDriveType() {
         Assert.assertEquals(golf3.getDriveType(), DriveType.FrontWheel);
     }
+
+    @Test
+    public void startAndStop() {
+        golf3.startRide();
+        golf3.stopRide();
+    }
 }

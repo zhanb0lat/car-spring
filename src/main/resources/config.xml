@@ -3,5 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="Golf3Empty" class="com.zhanbolat.carspring.cars.impl.Golf3"></bean>
 
+    <bean id="Golf3" class="com.zhanbolat.carspring.cars.impl.Golf3" scope="prototype">
+        <constructor-arg ref="AEE" type="com.zhanbolat.carspring.engines.IEngine" index="0"/>
+        <constructor-arg ref="020" type="com.zhanbolat.carspring.transmissions.ITransmission" index="1"/>
+    </bean>
+
+    <bean id="AEE" class="com.zhanbolat.carspring.engines.impl.AEE"></bean>
+    <bean id="4B" class="com.zhanbolat.carspring.engines.impl._4B"></bean>
+
+    <bean id="020" class="com.zhanbolat.carspring.transmissions.impl.M_020"></bean>
+    <bean id="01M" class="com.zhanbolat.carspring.transmissions.impl.A_01M"></bean>
 </beans>
