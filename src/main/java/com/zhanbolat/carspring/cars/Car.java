@@ -15,6 +15,7 @@ public abstract class Car implements ICar {
 
     protected Car() {
        this.model = "undefined car";
+       this.driveType = DriveType.FrontWheel;
     }
 
     protected Car(
