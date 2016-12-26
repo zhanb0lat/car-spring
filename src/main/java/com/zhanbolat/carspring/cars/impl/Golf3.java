@@ -4,11 +4,13 @@ import com.zhanbolat.carspring.cars.Car;
 import com.zhanbolat.carspring.cars.DriveType;
 import com.zhanbolat.carspring.engines.IEngine;
 import com.zhanbolat.carspring.transmissions.ITransmission;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
 /**
  * Created by zhanbolat on 18.12.2016.
  */
-public class Golf3 extends Car {
+public class Golf3 extends Car implements InitializingBean, DisposableBean {
 
     public Golf3() {
         super();
@@ -23,11 +25,14 @@ public class Golf3 extends Car {
         );
     }
 
-    public void preInit() {
-        System.out.println("Golf3 init... ");
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("[InitializingBean] " + this.getModel() + " init");
     }
 
-    public void preDestroy() {
-        System.out.println("Golf3 destroy... ");
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("[DisposableBean] " + this.getModel() + " destroy");
     }
+
 }

@@ -2,12 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd"
-        default-init-method="preInit"
-        default-destroy-method="preDestroy"
-        default-lazy-init="true">
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="Golf3Empty" class="com.zhanbolat.carspring.cars.impl.Golf3">
+    <bean id="Golf3Empty" class="com.zhanbolat.carspring.cars.impl.Golf3" scope="prototype">
     </bean>
 
     <bean id="Golf3" class="com.zhanbolat.carspring.cars.impl.Golf3" scope="prototype">
@@ -20,4 +17,6 @@
 
     <bean id="020" class="com.zhanbolat.carspring.transmissions.impl.M_020"></bean>
     <bean id="01M" class="com.zhanbolat.carspring.transmissions.impl.A_01M"></bean>
+
+    <bean class="com.zhanbolat.carspring.MyBeanPostProcessor" />
 </beans>
