@@ -1,7 +1,5 @@
 package com.zhanbolat.carspring.engines;
 
-import java.lang.ref.SoftReference;
-
 /**
  * Created by zhanbolat on 17.12.2016.
  */
