@@ -2,14 +2,18 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd"
+    default-lazy-init="true">
 
     <bean id="Golf3Empty" class="com.zhanbolat.carspring.cars.impl.Golf3" scope="prototype">
     </bean>
 
-    <bean id="Golf3" class="com.zhanbolat.carspring.cars.impl.Golf3" scope="prototype">
-        <constructor-arg ref="AEE" type="com.zhanbolat.carspring.engines.IEngine" index="0"/>
-        <constructor-arg ref="020" type="com.zhanbolat.carspring.transmissions.ITransmission" index="1"/>
+    <bean id="Golf3" class="com.zhanbolat.carspring.cars.impl.Golf3" scope="prototype"
+        parent="superCar"></bean>
+
+    <bean id="superCar" abstract="true">
+        <constructor-arg ref="AEE"/>
+        <constructor-arg ref="020"/>
     </bean>
 
     <bean id="AEE" class="com.zhanbolat.carspring.engines.impl.AEE"></bean>

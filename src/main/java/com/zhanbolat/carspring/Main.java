@@ -12,8 +12,8 @@ public class Main {
 
     public static void main(String ... args) {
         context = new ClassPathXmlApplicationContext("config.xml");
-        //ICar golf3 = (ICar) context.getBean("Golf3");
-        ICar golf3Empty = (ICar) context.getBean("Golf3Empty");
-        golf3Empty.startRide();
+        ICar golf3 = (ICar) context.getBean("Golf3");
+        //ICar golf3Empty = (ICar) context.getBean("Golf3Empty");
+        //golf3Empty.startRide();
     }
 }
