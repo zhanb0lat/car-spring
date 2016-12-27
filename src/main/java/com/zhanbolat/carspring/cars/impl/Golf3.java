@@ -28,12 +28,12 @@ public class Golf3 extends Car implements InitializingBean, DisposableBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("[InitializingBean] " + this.getModel() + " init");
+        System.out.println("[InitializingBean] " + getModel() + " init");
     }
 
     @Override
     public void destroy() throws Exception {
-        System.out.println("[DisposableBean] " + this.getModel() + " destroy");
+        System.out.println("[DisposableBean] " + getModel() + " destroy");
     }
 
 }

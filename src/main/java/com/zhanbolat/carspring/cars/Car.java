@@ -46,43 +46,43 @@ public abstract class Car implements ICar {
 
     @Override
     public String getModel() {
-        return this.model;
+        return model;
     }
 
     @Override
     public IEngine getEngine() {
-        return this.engine;
+        return engine;
     }
 
     @Override
     public ITransmission getTransmission() {
-        return this.transmission;
+        return transmission;
     }
 
     @Override
     public DriveType getDriveType() {
-        return this.driveType;
+        return driveType;
     }
 
     @Override
     public void startRide() {
-        if (this.engine == null || this.transmission == null) {
-            System.err.println("Warning! " + this.model + ": No engine and/or transmission");
+        if (engine == null || transmission == null) {
+            System.err.println("Warning! " + model + ": No engine and/or transmission");
         } else if (!isRide) {
-            this.isRide = true;
-            System.out.println(this.model + ": starting ride...");
-            this.engine.startEngine();
-            this.transmission.gearUp();
+            isRide = true;
+            System.out.println(model + ": starting ride...");
+            engine.startEngine();
+            transmission.gearUp();
         }
     }
 
     @Override
     public void stopRide() {
-        if (isRide) {
-            this.isRide = false;
-            System.out.println(this.model + ": stopping ride...");
-            this.transmission.gearDown();
-            this.engine.stopEngine();
+        if (isRide && engine != null && transmission != null) {
+            isRide = false;
+            System.out.println(model + ": stopping ride...");
+            transmission.gearDown();
+            engine.stopEngine();
         }
     }
 }

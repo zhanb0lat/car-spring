@@ -1,7 +1,6 @@
 package com.zhanbolat.carspring;
 
 import com.zhanbolat.carspring.cars.ICar;
-import com.zhanbolat.carspring.pool.IPool;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

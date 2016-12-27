@@ -16,6 +16,6 @@ public enum FuelType {
         this.name = name;
     }
     public String getName() {
-        return this.name;
+        return name;
     }
 }

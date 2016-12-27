@@ -23,36 +23,36 @@ public abstract class Engine implements IEngine {
 
     @Override
     public String getModel() {
-        return this.MODEL;
+        return MODEL;
     }
     @Override
     public double getCapacity() {
-        return this.CAPACITY;
+        return CAPACITY;
     }
     @Override
     public int getPower() {
-        return this.POWER;
+        return POWER;
     }
 
     @Override
     public FuelType getFuelType() {
-        return this.FUEL_TYPE;
+        return FUEL_TYPE;
     }
 
     @Override
     public void startEngine() {
-        System.out.println(this.MODEL + ": engine start");
+        System.out.println(MODEL + ": engine start");
     }
     @Override
     public void stopEngine() {
-        System.out.println(this.MODEL + ": engine stop");
+        System.out.println(MODEL + ": engine stop");
     }
 
     @Override
     public String toString() {
-        return "Модель: " + this.getModel() + "\n" +
-                "Объем: " + this.getCapacity() + "\n" +
-                "Мощность: " + this.getPower() + " л.с. \n" +
-                "Тип топлива: " + this.getFuelType().getName() + "\n";
+        return "Модель: " + getModel() + "\n" +
+                "Объем: " + getCapacity() + "\n" +
+                "Мощность: " + getPower() + " л.с. \n" +
+                "Тип топлива: " + getFuelType().getName() + "\n";
     }
 }

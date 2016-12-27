@@ -21,30 +21,30 @@ public abstract class Transmission implements ITransmission {
 
     @Override
     public String getModel() {
-        return this.MODEL;
+        return MODEL;
     }
     @Override
     public TransmissionType getTransmissionType() {
-        return this.TRANSMISSION_TYPE;
+        return TRANSMISSION_TYPE;
     }
     @Override
     public int getGearsCount() {
-        return this.GEARS_COUNT;
+        return GEARS_COUNT;
     }
 
     @Override
     public void gearUp() {
-        System.out.println(this.MODEL + ": gear up (+)");
+        System.out.println(MODEL + ": gear up (+)");
     }
     @Override
     public void gearDown() {
-        System.out.println(this.MODEL + ": gear down (-)");
+        System.out.println(MODEL + ": gear down (-)");
     }
 
     @Override
     public String toString() {
-        return "Модель: " + this.getModel() + "\n" +
-                "Тип КПП: " + this.getTransmissionType().getName() + "\n" +
-                "Кол-во передач: " + this.getGearsCount() + "\n";
+        return "Модель: " + getModel() + "\n" +
+                "Тип КПП: " + getTransmissionType().getName() + "\n" +
+                "Кол-во передач: " + getGearsCount() + "\n";
     }
 }

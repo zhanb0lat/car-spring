@@ -14,6 +14,6 @@ public enum DriveType {
         this.name = name;
     }
     public String getName() {
-        return this.name;
+        return name;
     }
 }
