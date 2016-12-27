@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+        default-lazy-init="true">
+    <import resource="engine-config.xml" />
+    <import resource="transmission-config.xml" />
+
+    <bean id="enginePool" class="com.zhanbolat.carspring.engines.impl.EnginePool">
+        <property name="items">
+            <set>
+                <ref bean="AEE" />
+                <ref bean="4B" />
+            </set>
+        </property>
+    </bean>
+
+    <bean id="transmissionPool" class="com.zhanbolat.carspring.transmissions.impl.TransmissionPool">
+        <property name="items">
+            <set>
+                <ref bean="01M" />
+                <ref bean="020" />
+            </set>
+        </property>
+    </bean>
+
+</beans>

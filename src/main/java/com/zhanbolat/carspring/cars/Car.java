@@ -18,6 +18,13 @@ public abstract class Car implements ICar {
        this.driveType = DriveType.FrontWheel;
     }
 
+    protected Car(IEngine engine, ITransmission transmission) {
+        this.setModel("Golf mk3");
+        this.setEngine(engine);
+        this.setTranmission(transmission);
+        this.setDriveType(DriveType.FrontWheel);
+    }
+
     protected Car(
             String model,
             IEngine engine,
@@ -27,14 +34,6 @@ public abstract class Car implements ICar {
         this.engine = engine;
         this.transmission = transmission;
         this.driveType = driveType;
-    }
-
-    @Override
-    public void carInit(IEngine engine, ITransmission transmission) {
-        this.setModel("Golf mk3");
-        this.setEngine(engine);
-        this.setTranmission(transmission);
-        this.setDriveType(DriveType.FrontWheel);
     }
 
     @Override

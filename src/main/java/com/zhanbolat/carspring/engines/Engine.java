@@ -47,4 +47,12 @@ public abstract class Engine implements IEngine {
     public void stopEngine() {
         System.out.println(this.MODEL + ": engine stop");
     }
+
+    @Override
+    public String toString() {
+        return "Модель: " + this.getModel() + "\n" +
+                "Объем: " + this.getCapacity() + "\n" +
+                "Мощность: " + this.getPower() + " л.с. \n" +
+                "Тип топлива: " + this.getFuelType().getName() + "\n";
+    }
 }

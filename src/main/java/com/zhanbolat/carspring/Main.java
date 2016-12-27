@@ -1,7 +1,6 @@
 package com.zhanbolat.carspring;
 
-import com.zhanbolat.carspring.cars.ICar;
-import com.zhanbolat.carspring.conveyor.IConveyor;
+import com.zhanbolat.carspring.pool.IPool;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,14 +12,14 @@ public class Main {
 
     public static void main(String ... args) {
         context = new ClassPathXmlApplicationContext("config.xml");
-        IConveyor carConveyor = (IConveyor) context.getBean("CarConveyor");
+        IPool enginePool = (IPool) context.getBean("enginePool");
 
-        ICar golf1 = carConveyor.getCar();
-        ICar golf2 = carConveyor.getCar();
-        ICar golf3 = carConveyor.getCar();
+        for (Object engine : enginePool.getItems())
+            System.out.println(engine);
 
-        System.out.println(golf1);
-        System.out.println(golf2);
-        System.out.println(golf3);
+        IPool transmissionPool = (IPool) context.getBean("transmissionPool");
+
+        for (Object transmissoin : transmissionPool.getItems())
+            System.out.println(transmissoin);
     }
 }

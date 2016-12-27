@@ -16,8 +16,8 @@ public class TransmissionTest {
 
     @Test
     public void checkDescription() {
-        Assert.assertEquals(a01m.getDescription(), "01M");
-        Assert.assertEquals(m020.getDescription(), "020");
+        Assert.assertEquals(a01m.getModel(), "01M");
+        Assert.assertEquals(m020.getModel(), "020");
     }
     @Test
     public void checkTransmissionType() {
