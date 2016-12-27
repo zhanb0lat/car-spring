@@ -13,18 +13,6 @@ public abstract class Car implements ICar {
     protected DriveType driveType;
     protected boolean isRide = false;
 
-    protected Car() {
-       this.model = "undefined car";
-       this.driveType = DriveType.FrontWheel;
-    }
-
-    protected Car(IEngine engine, ITransmission transmission) {
-        this.setModel("Golf mk3");
-        this.setEngine(engine);
-        this.setTranmission(transmission);
-        this.setDriveType(DriveType.FrontWheel);
-    }
-
     protected Car(
             String model,
             IEngine engine,

@@ -11,14 +11,15 @@ import org.springframework.beans.factory.InitializingBean;
  * Created by zhanbolat on 18.12.2016.
  */
 public class Golf3 extends Car implements InitializingBean, DisposableBean {
+    public static final String MODEL = "Golf mk3";
 
     public Golf3() {
-        super();
+        this(null, null);
     }
 
     public Golf3(IEngine engine, ITransmission transmission) {
         super(
-                "Golf mk3",
+                MODEL,
                 engine,
                 transmission,
                 DriveType.FrontWheel
