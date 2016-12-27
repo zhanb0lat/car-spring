@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context.xsd"
 
        default-lazy-init="true">
 
-    <import resource="engine-config.xml" />
-    <import resource="transmission-config.xml" />
-    <import resource="pools.xml" />
+    <context:annotation-config/>
 
-    <bean id="CarConveyor" class="com.zhanbolat.carspring.conveyor.CarConveyor">
-        <lookup-method name="getCar" bean="Golf3" />
-    </bean>
+    <import resource="engine-config.xml"/>
+    <import resource="transmission-config.xml"/>
+    <import resource="conveyors.xml"/>
+    <import resource="pools.xml"/>
 
-    <bean id="Golf3" class="com.zhanbolat.carspring.cars.impl.Golf3" scope="prototype"
-        parent="superCar" autowire="constructor"></bean>
 
-    <bean id="superCar" abstract="true">
-    </bean>
+    <bean id="Golf3" class="com.zhanbolat.carspring.cars.impl.Golf3" scope="prototype"/>
 
     <bean class="com.zhanbolat.carspring.MyBeanPostProcessor" />
 </beans>

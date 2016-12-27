@@ -2,6 +2,8 @@ package com.zhanbolat.carspring.cars;
 
 import com.zhanbolat.carspring.engines.IEngine;
 import com.zhanbolat.carspring.transmissions.ITransmission;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
  * Created by zhanbolat on 17.12.2016.

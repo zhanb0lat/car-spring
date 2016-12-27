@@ -50,7 +50,8 @@ public abstract class Engine implements IEngine {
 
     @Override
     public String toString() {
-        return "Модель: " + getModel() + "\n" +
+        return "[Двигатель] \n" +
+                "Модель: " + getModel() + "\n" +
                 "Объем: " + getCapacity() + "\n" +
                 "Мощность: " + getPower() + " л.с. \n" +
                 "Тип топлива: " + getFuelType().getName() + "\n";

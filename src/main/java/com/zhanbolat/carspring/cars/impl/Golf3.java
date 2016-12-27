@@ -6,6 +6,7 @@ import com.zhanbolat.carspring.engines.IEngine;
 import com.zhanbolat.carspring.transmissions.ITransmission;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by zhanbolat on 18.12.2016.
@@ -17,6 +18,7 @@ public class Golf3 extends Car implements InitializingBean, DisposableBean {
         this(null, null);
     }
 
+    @Autowired
     public Golf3(IEngine engine, ITransmission transmission) {
         super(
                 MODEL,

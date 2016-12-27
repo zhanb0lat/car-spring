@@ -13,5 +13,6 @@ public class Main {
     public static void main(String ... args) {
         context = new ClassPathXmlApplicationContext("config.xml");
         ICar car = (ICar) context.getBean("Golf3");
+        car.startRide();
     }
 }

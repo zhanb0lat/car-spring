@@ -43,7 +43,8 @@ public abstract class Transmission implements ITransmission {
 
     @Override
     public String toString() {
-        return "Модель: " + getModel() + "\n" +
+        return "[КПП] \n" +
+                "Модель: " + getModel() + "\n" +
                 "Тип КПП: " + getTransmissionType().getName() + "\n" +
                 "Кол-во передач: " + getGearsCount() + "\n";
     }
