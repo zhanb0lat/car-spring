@@ -4,6 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
 
-    <bean id="020" class="com.zhanbolat.carspring.transmissions.impl.M_020"></bean>
+    <bean id="020" class="com.zhanbolat.carspring.transmissions.impl.M_020" autowire-candidate="false"></bean>
     <bean id="01M" class="com.zhanbolat.carspring.transmissions.impl.A_01M"></bean>
 </beans>

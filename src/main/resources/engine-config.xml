@@ -4,6 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
 
-    <bean id="AEE" class="com.zhanbolat.carspring.engines.impl.AEE"></bean>
+    <bean id="AEE" class="com.zhanbolat.carspring.engines.impl.AEE" autowire-candidate="false"></bean>
     <bean id="4B" class="com.zhanbolat.carspring.engines.impl._4B"></bean>
 </beans>

@@ -14,11 +14,9 @@
     </bean>
 
     <bean id="Golf3" class="com.zhanbolat.carspring.cars.impl.Golf3" scope="prototype"
-        parent="superCar"></bean>
+        parent="superCar" autowire="constructor"></bean>
 
     <bean id="superCar" abstract="true">
-        <constructor-arg ref="AEE"/>
-        <constructor-arg ref="020"/>
     </bean>
 
     <bean class="com.zhanbolat.carspring.MyBeanPostProcessor" />
