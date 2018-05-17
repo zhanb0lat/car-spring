@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
 
-    <bean id="020" class="com.zhanbolat.carspring.transmissions.impl.M_020" />
-    <bean id="01M" class="com.zhanbolat.carspring.transmissions.impl.A_01M" autowire-candidate="false" />
+    <bean id="020" class="com.zhanbolat.carspring.transmissions.impl.Transmission"
+          c:description="020" c:transmissionType="Manual" c:gears_count="5" />
+    <bean id="01M" class="com.zhanbolat.carspring.transmissions.impl.Transmission" autowire-candidate="false"
+          c:description="01M" c:transmissionType="Automatic" c:gears_count="4" />
 </beans>

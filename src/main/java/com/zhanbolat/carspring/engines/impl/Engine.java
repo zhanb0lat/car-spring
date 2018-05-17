@@ -1,13 +1,16 @@
-package com.zhanbolat.carspring.engines;
+package com.zhanbolat.carspring.engines.impl;
+
+import com.zhanbolat.carspring.engines.FuelType;
+import com.zhanbolat.carspring.engines.IEngine;
 
 /**
  * Created by zhanbolat on 17.12.2016.
  */
-public abstract class Engine implements IEngine {
-    protected final String MODEL;
-    protected final double CAPACITY;
-    protected final int POWER;
-    protected final FuelType FUEL_TYPE;
+public class Engine implements IEngine {
+    private String model;
+    private final double capacity;
+    private final int power;
+    private final FuelType fuelType;
 
     protected Engine(
             final String model,
@@ -15,37 +18,37 @@ public abstract class Engine implements IEngine {
             final int power,
             final FuelType fuelType) {
 
-        this.MODEL = model;
-        this.CAPACITY = capacity;
-        this.POWER = power;
-        this.FUEL_TYPE = fuelType;
+        this.model = model;
+        this.capacity = capacity;
+        this.power = power;
+        this.fuelType = fuelType;
     }
 
     @Override
     public String getModel() {
-        return MODEL;
+        return model;
     }
     @Override
     public double getCapacity() {
-        return CAPACITY;
+        return capacity;
     }
     @Override
     public int getPower() {
-        return POWER;
+        return power;
     }
 
     @Override
     public FuelType getFuelType() {
-        return FUEL_TYPE;
+        return fuelType;
     }
 
     @Override
     public void startEngine() {
-        System.out.println(MODEL + ": engine start");
+        System.out.println(model + ": engine start");
     }
     @Override
     public void stopEngine() {
-        System.out.println(MODEL + ": engine stop");
+        System.out.println(model + ": engine stop");
     }
 
     @Override

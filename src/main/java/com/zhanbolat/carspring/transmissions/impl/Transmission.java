@@ -1,12 +1,15 @@
-package com.zhanbolat.carspring.transmissions;
+package com.zhanbolat.carspring.transmissions.impl;
+
+import com.zhanbolat.carspring.transmissions.ITransmission;
+import com.zhanbolat.carspring.transmissions.TransmissionType;
 
 /**
  * Created by zhanbolat on 17.12.2016.
  */
-public abstract class Transmission implements ITransmission {
-    protected final String MODEL;
-    protected final TransmissionType TRANSMISSION_TYPE;
-    protected final int GEARS_COUNT;
+public class Transmission implements ITransmission {
+    private final String MODEL;
+    private final TransmissionType TRANSMISSION_TYPE;
+    private final int GEARS_COUNT;
 
     protected Transmission(
             final String description,

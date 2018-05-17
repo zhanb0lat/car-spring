@@ -1,19 +1,19 @@
-package com.zhanbolat.carspring.cars;
+package com.zhanbolat.carspring.cars.impl;
 
+import com.zhanbolat.carspring.cars.DriveType;
+import com.zhanbolat.carspring.cars.ICar;
 import com.zhanbolat.carspring.engines.IEngine;
 import com.zhanbolat.carspring.transmissions.ITransmission;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
  * Created by zhanbolat on 17.12.2016.
  */
-public abstract class Car implements ICar {
-    protected String model;
-    protected IEngine engine;
-    protected ITransmission transmission;
-    protected DriveType driveType;
-    protected boolean isRide = false;
+public class Car implements ICar {
+    private String model;
+    private IEngine engine;
+    private ITransmission transmission;
+    private DriveType driveType;
+    private boolean isRide = false;
 
     protected Car(
             String model,

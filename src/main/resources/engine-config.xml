@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
 
-    <bean id="AEE" class="com.zhanbolat.carspring.engines.impl.AEE"/>
-    <bean id="4B" class="com.zhanbolat.carspring.engines.impl._4B" autowire-candidate="false"/>
+    <bean id="AEE" class="com.zhanbolat.carspring.engines.impl.Engine"
+          c:model="AEE" c:capacity="1.6" c:power="75" c:fuelType="Petrol"/>
+    <bean id="4B" class="com.zhanbolat.carspring.engines.impl.Engine" autowire-candidate="false"
+          c:model="4B" c:capacity="1.8" c:power="90" c:fuelType="Petrol"/>
 </beans>
